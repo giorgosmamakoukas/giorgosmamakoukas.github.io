@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,maximum-scale=2">
+    <link rel="stylesheet" type="text/css" media="screen" href="/assets/css/style.css?v=b7f279f9aca89961a861948e6a75105c85138935">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/assets/css/academicons.min.css"/>
+
+
+<!-- Begin Jekyll SEO tag v2.6.1 -->
+<title>Control for Nonlinear and Hybrid Systems | Giorgos Mamakoukas Digital Portfolio</title>
+<meta name="generator" content="Jekyll v3.8.5" />
+<meta property="og:title" content="Control for Nonlinear and Hybrid Systems" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Welcome to my website!" />
+<meta property="og:description" content="Welcome to my website!" />
+<link rel="canonical" href="http://localhost:4000/projects/NonlinearControl.html" />
+<meta property="og:url" content="http://localhost:4000/projects/NonlinearControl.html" />
+<meta property="og:site_name" content="Giorgos Mamakoukas Digital Portfolio" />
+<script type="application/ld+json">
+{"description":"Welcome to my website!","@type":"WebPage","url":"http://localhost:4000/projects/NonlinearControl.html","headline":"Control for Nonlinear and Hybrid Systems","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+  </head>
+
+  <body>
+
+    <!-- HEADER -->
+    <div id="header_wrap" class="outer">
+        <header class="inner">
+            <h1 id="project_title" style="font-size:210%"><a style="color:white" href="/">Giorgos Mamakoukas | Digital Portfolio</a></h1>
+            <!-- <h2 id="project_tagline">Welcome to my website!</h2> -->
+            <nav>
+                <ul>
+                    <!-- <li><a style="color:white; font-size:120%;" href="/">Home</a></li> -->
+                    <li><a style="color:white; font-size:120%;" href="/research">Research</a></li>
+                    <li><a style="color:white; font-size:120%;" href="/Leadership">Leadership & Service</a></li>
+                    <li><a style="color:white; font-size:120%;" href="/Teaching">Teaching</a></li>
+                    <li><a style="color:white; font-size:120%;" href="/publications">Publications</a></li>
+                    <li><a class="fun-colors" style="font-size: 120%;" href="/art">Multimedia</a></li>
+                    <li><a class="fa fa-github" style="color:white; font-size:120%;" href="https://github.com/giorgosmamakoukas"></a></li>
+                    <li><a class="ai ai-google-scholar-square" style="color:white; font-size:120%;" href="https://scholar.google.com/citations?user=7_skW1oAAAAJ&hl=en"></a></li>
+                 </div>
+                </ul>
+              </nav>
+        </header>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div class="sidenav">
+    	<h3><a href="/projects" style="color:black">Projects</a></h3>
+    		<p><a href="/projects/MachineLearning">Stable Machine Learning for Prediction and Control</a>
+      		<a href="/projects/RoboticFish">Data-Driven Control of Robotic Fish</a>
+          <a href="/projects/NonlinearControl">Real-Time Control for Nonlinear Systems</a>
+        </div>
+
+    <div id="main_content_wrap" class="outer">
+      <section id="main_content" class="inner">
+        <h1>Real-Time Control for Nonlinear Systems</h1>
+
+<body>
+  <div class="container">
+    <video width=90% controls muted>
+      <source src="/videos/WAFR_2018_Multimedia_2.mp4" type="video/mp4">
+    </video>
+    <!-- <div class="caption" style="width:90%; top:0%; bottom:88%;"><p>Higher-Order Variational Integrators in Robotic Simulation</p></div> -->
+  </div>
+  <div class="row" style="margin-top=-1em">
+    <div class="column2" style="width:31.5%">
+      <div class="container">
+        <img style="width:100%" src="/images/victoria.png" alt="Victoria">
+        <!-- <div class="caption" style="bottom:3%;"><p>Victoria</p></div> -->
+      </div>
+    </div>
+    <div class="column2" style="width:29.5%">
+      <div class="container">
+    		<img style="width:100%" src="/images/tree.png" alt="Tree">
+        <!-- <div class="caption" style="bottom:3%;"><p>Tree</p></div> -->
+      </div>
+    </div>
+    <div class="column2" style="width:29.5%">
+      <div class="container">
+        <img style="width:100%" src="/images/sphere.png" alt="Sphere">
+        <!-- <div class="caption" style="bottom:3%;"><p>Sphere</p></div> -->
+      </div>
+    </div>
+  </div>
+
+  <br><p>This project is developing computationally efficient optimal
+  and semi-optimal control methods.  The research is
+  based on the prior development of sequential action control, a
+  numerical iterative optimal control technique that often finds
+  near-optimizers in a single iteration.  Using this technique as a
+  starting point, we are interested in developing numerical techniques
+  that can run in real-time for high dimensional nonlinear systems
+  with provable guarantees of stability and near optimality.  The key
+  starting point for the work is that sequential action control is a
+  very simple control approach, only relying on a single control
+  vector calculation at any given time, suggesting that near optimal
+  solutions may be very simple to compute.  Goals for the research
+  include theoretical guarantees, numerical methods, and experiments.
+  Thus far we have been able to show that the existence of these
+  optimizers depends on local nonlinear controllability.  Moreover,
+  keeping track of the computations as one goes leads to stability
+  guarantees.
+</p>
+
+  <h3>Publications</h3>
+    <p><b>Feedback synthesis for underactuated systems using sequential second-order needle variations</b>
+    <br>G. Mamakoukas, M. Maciver, and T. D. Murphey
+    <br><i>International Journal of Robotics Research</i>, vol. 37, no. 13-14, pp. 1826–1853, 2019. <a href="../pdfs/2019IJRRMaMaMu.pdf">PDF</a></p>
+  <p><b>Superlinear convergence using controls based on second-order needle variations</b>
+    <br>G. Mamakoukas, M. MacIver, and T. D. Murphey
+    <br><i>IEEE Int. Conf. on Decision and Control (CDC)</i>, pp. 4301–4308, 2018. <a href="../pdfs/2018CDCMaMaMu.pdf">PDF</a></p>
+  <p><b>Feedback synthesis for controllable underactuated systems using sequential second order actions</b>
+    <br>G. Mamakoukas, M. MacIver, and T. D. Murphey
+    <br><i>Robotics: Science and Systems Proceedings</i>, 2017. <a href="../pdfs/2017RSSMaMaMu.pdf">PDF</a>, <a href="/videos/2017RSSMaMaMuMM.mp4">Video</a></p>
+
+  <h3>Funding</h3>
+  <p> This project is funded by the <a href="https://www.nsf.gov/">National Science Foundation</a>–Civil and Mechanical Systems: Stability and Optimality Properties of Sequential Action Control for Nonlinear and Hybrid Systems.</p><br>
+
+</body>
+
+
+        <div class="bottomnav">
+          <hr>
+          <h3>Research</h3>
+          	<p><a href="/projects/MachineLearning">Stable Machine Learning for Prediction and Control</a>
+            <br><a href="/projects/RoboticFish">Data-Driven Control of Robotic Fish</a>
+          	<br><a href="/projects/NonlinearControl" >Real-Time Control for Nonlinear Systems</a>
+        </div>
+
+      </section>
+
+    </div>
+
+
+    <!-- FOOTER  -->
+    <div id="footer_wrap" class="outer">
+      <footer class="inner">
+        <ul>
+            <li style="font-weight:normal;color:white">Part of the Center for Robotics and Biosystems at <a style="color:white" href="https://www.northwestern.edu/">Northwestern University</a> | <a style="color:white" href="/sitemap.html">Site Map</a> </li>
+        </ul>
+        <!-- 
+        <p class="copyright">Giorgos Mamakoukas | Digital Portfolio maintained by <a href="https://github.com/giorgosmamakoukas">giorgosmamakoukas</a></p>
+        
+        <p>Published with <a href="https://pages.github.com">GitHub Pages</a></p> -->
+      </footer>
+    </div>
+
+  </body>
+</html>
