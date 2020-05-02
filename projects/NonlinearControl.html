@@ -36,19 +36,20 @@ title: Control for Nonlinear and Hybrid Systems
       <div class="row" style="margin-bottom=-2em;">
                 <main class='main'>
                         <section class='right section' align = "justify" style="width:95%" style="float: right; margin-right: 100px;" >
-                                <p><font size="3">
+                                <p><font size="2">
                                   Fish, like cars, do not have the ability to move directly sideways;
                                   such motion requires a combination of different motions. The algorithm
                                   I designed automatically computes the required sequences of actions
                                   to complete such moves. This is a parallel maneuver of an underactuated
                                   dynamic 3D fish that cannot move sideways, downwards, or pitch. The algorithm,
-                                  in real-time, pushes the fish sideways by combining roll and upward motion.
+                                  in real-time, pushes the fish sideways by combining roll and upward motion, while alternative
+                                  solutions fail.
                                 </font>
                                 </p>
                               </section>
                                     <div class="horizontalgap" style="width:50px"></div>
 
-                                    <section class='left section' style = "width: 70%">
+                                    <section class='left section' style = "width: 80%">
 
                                       <a href="/projects/RoboticFish">
                                       <video controls autoplay loop >
@@ -68,16 +69,18 @@ title: Control for Nonlinear and Hybrid Systems
 
                       <p>
                       <font size="2">
-                          This is a parallel maneuver of an underactuated 3D dynamic fish model.
-                          Such motion is made feasible with second-order needle variation controls;
-                          first-order needle variation controls are singular.
+                            Being able to compute solutions matters especially
+                            in time-critical operations. In the presence of a constant fluid drift,
+                            failing to find solutions can be disastrous. In the demo on the right,
+                            my algorithm can find solutions to move the fish against the flow and stay
+                            close to the target.
                       </font>
                       </p>
                     </section>
 
                     <div class="horizontalgap" style="width:50px"></div>
 
-                    <section class='left section' style = "width: 70%">
+                    <section class='left section' style = "width: 80%">
                           <a href="/projects/RoboticFish">
                               <video controls autoplay loop >
                                     <source src='/videos/tracking.mp4'  type="video/mp4" />
@@ -89,12 +92,15 @@ title: Control for Nonlinear and Hybrid Systems
 
       <a href="https://arxiv.org/pdf/1804.09559"> <h2 align = "center"> Obstacle Avoidance </h2> </a>
 
-      <p align = "justify">
-          Add some text here
-      </p>
+
 
 <div class="row" style="margin-bottom=-2em;">
+  <p align = "justify">
 
+      Path planning amidst obstacles is often treated separately from the optimal control problem; algorithms
+      find a collision-free path first and then try to move a system along that solution. The algorithm I designed
+      addresses both problems together and computes motions that have guarantees on being collision-free.
+    </p>
 <main class='main'>
       <section class='left section' style = "width: 100%">
             <p>
@@ -115,8 +121,14 @@ title: Control for Nonlinear and Hybrid Systems
             </a>
       </section>
 
-
 </main>
+<p align = "justify">
+
+    For illustration pursposes, I use the iRoomba robot as a differential drive model to demonstrate some
+    maneuvers among obstacles. In the video, I show the path followed by the model to reach the target starting
+    from several different positions. The algorithm, in real-time, always finds the best solutions, even through narrow spaces (between obstacles 2 and 3).
+
+</p>
 
 <br>
 
@@ -139,53 +151,27 @@ title: Control for Nonlinear and Hybrid Systems
   <!-- <embed src="/images/Convergence_comparison_dynfish.png" width="300" height="300">
     <embed src="/images/cost_comparison_DifDrive.png" width="300" height="300"> -->
 
+    <div class="row" style="margin-bottom=-2em;">
+              <main class='main'>
+                      <section class='right section' align = "justify" style="width:95%" style="float: right; margin-right: 100px;" >
+                              <p><font size="2">
 
-    <main class='main'>
-          <section class='left section' style = "width: 100%">
-          <a>
-                <video controls autoplay loop >
-                <source src='/videos/cart2nd.mp4'  type="video/mp4" />
-          </a>
-          </section>
+                              </font>
+                              </p>
+                            </section>
+                                  <div class="horizontalgap" style="width:50px"></div>
 
-          <div class="horizontalgap" style="width:50px"></div>
-          <section class='right section' align = "justify" style="width:100%" style="float: right; margin-right: 100px;" >
-          <p><font size="3">
-                This is a parallel maneuver of an underactuated 3D dynamic fish model.
-                Such motion is made feasible with second-order needle variation controls;
-                first-order needle variation controls are singular.
-          </font></p>
+                                  <section class='left section' style = "width: 80%">
 
-          </section>
-    </main>
-<!-- <main class='main'>
+                                    <a href="/projects/RoboticFish">
+                                    <video controls autoplay loop >
+                                    <source src='/videos/cart.mp4'  type="video/mp4" />
+                                  </video>
+                                    </a>
+                    </section>
+            </main>
+    </div>
 
-  <section class='left section' style = "width: 70%">
-    <a href="/projects/MachineLearning">
-      <video controls autoplay loop >
-      <source src='/videos/obstacles2.mp4'  type="video/mp4" />
-    </a>
-  </section>
-
-  <div class="horizontalgap" style="width:50px"></div>
-
-
-  <section class='right section' align = "justify" style="width:100%" style="float: right; margin-right: 100px;" >
-
-    <p><font size="3">
-      This project focuses on developing machine learning techniques that improve
-      both short- and long-term prediction accuracy. We develop numerical methods
-      that guarantee the stability of data-driven modeling, prediction, and
-      control and can run in real time. We test these methods in simulations and
-      experiments on various robotic systems and applications, including predicting
-      the gait cycle of a biped, stabilizing a quadrotor, and tracking trajectories
-      or pushing blocks using the Franka Emika robot.
-    </font>
-
-    </p>
-
-  </section>
-</main> -->
 
 <!-- ************************* PARALLEL MANEUVER  ************************* -->
 
@@ -201,6 +187,6 @@ title: Control for Nonlinear and Hybrid Systems
     <br><i>Robotics: Science and Systems Proceedings (RSS)</i>, 2017. <a href="../pdfs/2017RSSMaMaMu.pdf">PDF</a>, <a href="/videos/2017RSSMaMaMuMM.mp4">Video</a></p>
 
   <h3>Funding</h3>
-  <p> This project was funded by the <a href="https://www.nsf.gov/">National Science Foundation</a>–Civil and Mechanical Systems: Stability and Optimality Properties of Sequential Action Control for Nonlinear and Hybrid Systems.</p><br>
+  <p> This project was funded by the Office of Naval Research and the <a href="https://www.nsf.gov/">National Science Foundation</a>–Civil and Mechanical Systems: Stability and Optimality Properties of Sequential Action Control for Nonlinear and Hybrid Systems.</p><br>
 
 </body>
