@@ -5,7 +5,7 @@
     <meta charset='utf-8'>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width,maximum-scale=2">
-    <link rel="stylesheet" type="text/css" media="screen" href="/assets/css/style.css?v=0fd51cc50a3a32cfc7ea0bef0fad820c488d6f51">
+    <link rel="stylesheet" type="text/css" media="screen" href="/assets/css/style.css?v=67d254ea4cbccc0b29fae59bd4933cecd6496709">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="/assets/css/academicons.min.css"/>
 
@@ -59,36 +59,162 @@
 
     <div id="main_content_wrap" class="outer">
       <section id="main_content" class="inner">
-        <h1>Real-Time Control for Nonlinear Systems</h1>
+        <h1 style="text-align:center">Real-Time Control for Nonlinear Systems</h1>
 
+<div class="row" style="margin-bottom=0em; margin-left:0.2em">
+      <video controls autoplay loop >
+      <source src='/videos/Roomba_crop.mp4'  type="video/mp4" />
+</div>
 <body>
+      <br>
+      <p align = "justify"><font size = "3">
+            In this project, I developed computationally efficient optimal
+            nonlinear control methods. I developed numerical techniques
+            that can run in real-time for high dimensional nonlinear systems
+            with provable guarantees of convergence, stability, and near optimality.
+            I have also shown that the existence of these
+            optimizers depends on local nonlinear controllability.
+      </p>
 
-  <a>
-  <video controls autoplay loop>
-  <source src='/videos/Roomba_crop.mp4'  type="video/mp4" />
-  <!-- <source src="movie.mp4" type="video/mp4" /><!-- Firefox / Opera / Chrome10 -->
-  </a>
+      <br>
 
-  <br><p align = "justify">This project is developing computationally efficient optimal
-  and semi-optimal control methods.  The research is
-  based on the prior development of sequential action control, a
-  numerical iterative optimal control technique that often finds
-  near-optimizers in a single iteration.  Using this technique as a
-  starting point, we are interested in developing numerical techniques
-  that can run in real-time for high dimensional nonlinear systems
-  with provable guarantees of stability and near optimality.  The key
-  starting point for the work is that sequential action control is a
-  very simple control approach, only relying on a single control
-  vector calculation at any given time, suggesting that near optimal
-  solutions may be very simple to compute.  Goals for the research
-  include theoretical guarantees, numerical methods, and experiments.
-  Thus far we have been able to show that the existence of these
-  optimizers depends on local nonlinear controllability.  Moreover,
-  keeping track of the computations as one goes leads to stability
-  guarantees.
-</p>
+      <a ref="https://arxiv.org/pdf/1804.09559">   <h2 align = "center"> Convergence </h2>    </a>
+
+      <p align = "justify"><font size = "3">
+            I derived a nonlinear feedback control synthesis that has formal guarantees
+            on controllability-dependent convergence. Using optimal perturbations,
+            the algorithm avoids expensive iterative computations, is
+            faster than alternative state-of-the-art controllers, and can run in real time.
+
+      <br>
+      <br>
+
+      <div class="row" style="margin-bottom=-2em;">
+                <main class='main'>
+                        <section class='right section' align = "justify" style="width:95%" style="float: right; margin-right: 100px;" >
+                                <p><font size="3">
+                                  Fish, like cars, do not have the ability to move directly sideways;
+                                  such motion requires a combination of different motions. The algorithm
+                                  I designed automatically computes the required sequences of actions
+                                  to complete such moves. This is a parallel maneuver of an underactuated
+                                  dynamic 3D fish that cannot move sideways, downwards, or pitch. The algorithm,
+                                  in real-time, pushes the fish sideways by combining roll and upward motion.
+                                </font>
+                                </p>
+                              </section>
+                                    <div class="horizontalgap" style="width:50px"></div>
+
+                                    <section class='left section' style = "width: 70%">
+
+                                      <a href="/projects/RoboticFish">
+                                      <video controls autoplay loop >
+                                      <source src='/videos/parallel3.mp4'  type="video/mp4" />
+                                    </video>
+                                      </a>
+                      </section>
+              </main>
+      </div>
+
+      <br>
+
+        <div class="row" style="margin-bottom=-2em;">
+              <main class='main'>
+
+                    <section class='right section' align = "justify" style="width:95%" style="float: right; margin-right: 100px;" >
+
+                      <p>
+                      <font size="2">
+                          This is a parallel maneuver of an underactuated 3D dynamic fish model.
+                          Such motion is made feasible with second-order needle variation controls;
+                          first-order needle variation controls are singular.
+                      </font>
+                      </p>
+                    </section>
+
+                    <div class="horizontalgap" style="width:50px"></div>
+
+                    <section class='left section' style = "width: 70%">
+                          <a href="/projects/RoboticFish">
+                              <video controls autoplay loop >
+                                    <source src='/videos/tracking.mp4'  type="video/mp4" />
+                              </video>
+                          </a>
+                    </section>
+              </main>
+        </div>
+
+      <a href="https://arxiv.org/pdf/1804.09559"> <h2 align = "center"> Obstacle Avoidance </h2> </a>
+
+      <p align = "justify">
+          Add some text here
+      </p>
+
+<div class="row" style="margin-bottom=-2em;">
 
 <main class='main'>
+      <section class='left section' style = "width: 100%">
+            <p>
+                  <img src="/images/2obstacles_left.png" style="width:200px; height: 200px; margin-right: 10px; margin-bottom: 10px;" >
+                  <img src="/images/2obstacles_right.png" style="width:200px; height: 200px; margin-right: 10px; margin-bottom: 10px;" >
+                  <img src="/images/3obstacles_b.png" style="width:200px; height: 200px; margin-right: 10px;" >
+                  <img src="/images/behindobstacle.png" style="width:200px; height: 200px; margin-right: 10px;" >
+            </p>
+      </section>
+
+
+      <div class="horizontalgap" style="width:50px"></div>
+
+      <section class='right section' align = "justify" style="width:70%" >
+            <a>
+                  <video controls autoplay loop >
+                  <source src='/videos/obstacles2.mp4'  type="video/mp4" />
+            </a>
+      </section>
+
+
+</main>
+
+<br>
+
+<a href="https://robotics.northwestern.edu/documents/publications/CDC.pdf">   <h2 align = "center"> Convergence Rate </h2>    </a>
+
+<p>
+    Add videos of cart pendulum where 2nd order converges faster.
+</p>
+  <!-- <div style="padding:10px;">
+      <img src="images/2obstacles_left.jpg" class="img-responsive" alt=""/>
+  </div> -->
+
+  <!-- <div>
+<embed src="/images/3obstacles_b.png" width="200" height="200">
+<embed src="/images/behindobstacle.png" width="200" height="200">
+</div> -->
+
+<img src="/images/Convergence_comparison_dynfish.png" style="width:250px; height: 250px; margin-right: 10px; margin-bottom: 10px;" >
+<img src="/images/cost_comparison_DifDrive.png" style="width:250px; height: 250px; margin-right: 10px; margin-bottom: 10px;" >
+  <!-- <embed src="/images/Convergence_comparison_dynfish.png" width="300" height="300">
+    <embed src="/images/cost_comparison_DifDrive.png" width="300" height="300"> -->
+
+
+    <main class='main'>
+          <section class='left section' style = "width: 100%">
+          <a>
+                <video controls autoplay loop >
+                <source src='/videos/cart2nd.mp4'  type="video/mp4" />
+          </a>
+          </section>
+
+          <div class="horizontalgap" style="width:50px"></div>
+          <section class='right section' align = "justify" style="width:100%" style="float: right; margin-right: 100px;" >
+          <p><font size="3">
+                This is a parallel maneuver of an underactuated 3D dynamic fish model.
+                Such motion is made feasible with second-order needle variation controls;
+                first-order needle variation controls are singular.
+          </font></p>
+
+          </section>
+    </main>
+<!-- <main class='main'>
 
   <section class='left section' style = "width: 70%">
     <a href="/projects/MachineLearning">
@@ -102,7 +228,7 @@
 
   <section class='right section' align = "justify" style="width:100%" style="float: right; margin-right: 100px;" >
 
-    <p><font size="2">
+    <p><font size="3">
       This project focuses on developing machine learning techniques that improve
       both short- and long-term prediction accuracy. We develop numerical methods
       that guarantee the stability of data-driven modeling, prediction, and
@@ -115,21 +241,23 @@
     </p>
 
   </section>
-</main>
+</main> -->
+
+<!-- ************************* PARALLEL MANEUVER  ************************* -->
 
   <h3>Publications</h3>
     <p><b>Feedback synthesis for underactuated systems using sequential second-order needle variations</b>
     <br>G. Mamakoukas, M. Maciver, and T. D. Murphey
-    <br><i>International Journal of Robotics Research</i>, vol. 37, no. 13-14, pp. 1826–1853, 2019. <a href="../pdfs/2019IJRRMaMaMu.pdf">PDF</a></p>
+    <br><i>International Journal of Robotics Research (IJRR)</i>, vol. 37, no. 13-14, pp. 1826–1853, 2019. <a href="../pdfs/2019IJRRMaMaMu.pdf">PDF</a></p>
   <p><b>Superlinear convergence using controls based on second-order needle variations</b>
     <br>G. Mamakoukas, M. MacIver, and T. D. Murphey
-    <br><i>IEEE Int. Conf. on Decision and Control (CDC)</i>, pp. 4301–4308, 2018. <a href="../pdfs/2018CDCMaMaMu.pdf">PDF</a></p>
+    <br><i>IEEE International Conference on Decision and Control (CDC)</i>, pp. 4301–4308, 2018. <a href="../pdfs/2018CDCMaMaMu.pdf">PDF</a></p>
   <p><b>Feedback synthesis for controllable underactuated systems using sequential second order actions</b>
     <br>G. Mamakoukas, M. MacIver, and T. D. Murphey
-    <br><i>Robotics: Science and Systems Proceedings</i>, 2017. <a href="../pdfs/2017RSSMaMaMu.pdf">PDF</a>, <a href="/videos/2017RSSMaMaMuMM.mp4">Video</a></p>
+    <br><i>Robotics: Science and Systems Proceedings (RSS)</i>, 2017. <a href="../pdfs/2017RSSMaMaMu.pdf">PDF</a>, <a href="/videos/2017RSSMaMaMuMM.mp4">Video</a></p>
 
   <h3>Funding</h3>
-  <p> This project is funded by the <a href="https://www.nsf.gov/">National Science Foundation</a>–Civil and Mechanical Systems: Stability and Optimality Properties of Sequential Action Control for Nonlinear and Hybrid Systems.</p><br>
+  <p> This project was funded by the <a href="https://www.nsf.gov/">National Science Foundation</a>–Civil and Mechanical Systems: Stability and Optimality Properties of Sequential Action Control for Nonlinear and Hybrid Systems.</p><br>
 
 </body>
 
@@ -153,9 +281,9 @@
         <ul>
             <li style="font-weight:normal;color:white">Part of the Center for Robotics and Biosystems at <a style="color:white" href="https://www.northwestern.edu/">Northwestern University</a> | <a style="color:white" href="/sitemap.html">Site Map</a> </li>
         </ul>
-        <!--
+        <!-- 
         <p class="copyright">Giorgos Mamakoukas | Digital Portfolio maintained by <a href="https://github.com/giorgosmamakoukas">giorgosmamakoukas</a></p>
-
+        
         <p>Published with <a href="https://pages.github.com">GitHub Pages</a></p> -->
       </footer>
     </div>
