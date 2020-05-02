@@ -5,7 +5,7 @@
     <meta charset='utf-8'>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width,maximum-scale=2">
-    <link rel="stylesheet" type="text/css" media="screen" href="/assets/css/style.css?v=50697956d4d52702a88747bf7abd08ecbcc8f0c6">
+    <link rel="stylesheet" type="text/css" media="screen" href="/assets/css/style.css?v=f6ea06e1d7c769527b1b84d4b1ff860d98e7c546">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="/assets/css/academicons.min.css"/>
 
@@ -107,7 +107,7 @@
 
                                     <section class='left section' style = "width: 80%">
 
-                                      <a href="/projects/RoboticFish">
+                                      <a>
                                       <video controls autoplay loop >
                                       <source src='/videos/parallel3.mp4'  type="video/mp4" />
                                     </video>
@@ -137,7 +137,7 @@
                     <div class="horizontalgap" style="width:50px"></div>
 
                     <section class='left section' style = "width: 80%">
-                          <a href="/projects/RoboticFish">
+                          <a >
                               <video controls autoplay loop >
                                     <source src='/videos/tracking.mp4'  type="video/mp4" />
                               </video>
@@ -182,7 +182,7 @@
 
     For illustration pursposes, I use the iRoomba robot as a differential drive model to demonstrate some
     maneuvers among obstacles. In the video, I show the path followed by the model to reach the target starting
-    from several different positions. The algorithm, in real-time, always finds the best solutions, even through narrow spaces (between obstacles 2 and 3).
+    from several different positions. The algorithm, in real-time, always finds the best paths, even through narrow spaces (between obstacles 2 and 3).
 
 </p>
 
@@ -191,43 +191,115 @@
 <a href="https://robotics.northwestern.edu/documents/publications/CDC.pdf">   <h2 align = "center"> Convergence Rate </h2>    </a>
 
 <p>
-    Add videos of cart pendulum where 2nd order converges faster.
+    Besides guaranteeing solutions when other methods fail, the designed algorithm is shown to have qualitatively better solutions than alternative schemes and converge faster.
 </p>
-  <!-- <div style="padding:10px;">
-      <img src="images/2obstacles_left.jpg" class="img-responsive" alt=""/>
-  </div> -->
 
-  <!-- <div>
-<embed src="/images/3obstacles_b.png" width="200" height="200">
-<embed src="/images/behindobstacle.png" width="200" height="200">
-</div> -->
-
-<img src="/images/Convergence_comparison_dynfish.png" style="width:250px; height: 250px; margin-right: 10px; margin-bottom: 10px;" >
-<img src="/images/cost_comparison_DifDrive.png" style="width:250px; height: 250px; margin-right: 10px; margin-bottom: 10px;" >
   <!-- <embed src="/images/Convergence_comparison_dynfish.png" width="300" height="300">
     <embed src="/images/cost_comparison_DifDrive.png" width="300" height="300"> -->
 
     <div class="row" style="margin-bottom=-2em;">
-              <main class='main'>
-                      <section class='right section' align = "justify" style="width:95%" style="float: right; margin-right: 100px;" >
-                              <p><font size="2">
+            <main class='main'>
+                    <section class='right section' align = "justify" style="width:100%" style="float: right; margin-right: 10px;" >
+                            <p>
+                                  <!-- <video controls autoplay loop >
+                                        <source src='/videos/continuous.mp4'  type="video/mp4" />
+                                  </video> -->
+                                  <img src="/images/Convergence_comparison_dynfish_1.png" style="width:48%; margin-right: 5px" >
+                                  <img src="/images/cost_comparison_DifDrive.png" style="width:48%; margin-right: 5px" >
+                            </p>
+                    </section>
 
-                              </font>
-                              </p>
-                            </section>
-                                  <div class="horizontalgap" style="width:50px"></div>
+                    <div class="horizontalgap" style="width:30px"></div>
 
-                                  <section class='left section' style = "width: 80%">
-
-                                    <a href="/projects/RoboticFish">
+                    <section class='left section' style = "width: 80%">
+                               <a >
                                     <video controls autoplay loop >
-                                    <source src='/videos/cart.mp4'  type="video/mp4" />
-                                  </video>
-                                    </a>
+                                            <source src='/videos/cart.mp4'  type="video/mp4" />
+                                    </video>
+                               </a>
                     </section>
             </main>
     </div>
 
+    <br>
+
+                      In simulations of a three-link bipedal walking, the algorithm is shown to successfully
+                      perform gait initiation, walking, and disturbance tolerance.
+
+              <div class="row" style="margin-bottom=-2em;">
+                      <main class='main'>
+                              <section class='right section' align = "justify" style="width:100%" style="float: right" >
+                                <p >
+                                  <img src="/images/Torso_motion.png" style="width:100%" >
+                                </p>
+                              </section>
+
+                              <div class="horizontalgap" style="width:40px"></div>
+
+                              <section class='left section' style = "width: 100%">
+                                    <p >
+                                        <!-- <img src="/images/Torso_motion.png" style="width:100%" > -->
+                                         <img src="/images/th1_in.png" style="width:120px; margin-bottom: 10px;" >
+                                         <img src="/images/th2_in.png" style="width:120px; margin-bottom: 10px;" >
+                                         <img src="/images/th3_in.png" style="width:120px; margin-bottom: 10px;" >
+                                    </p>
+                                     <p >
+                                          <img src="/images/th1.png" style="width:120px; margin-bottom: 10px;" >
+                                          <img src="/images/th2.png" style="width:120px; margin-bottom: 10px;" >
+                                          <img src="/images/th3.png" style="width:120px; margin-bottom: 10px;" >
+                                     </p>
+                              </section>
+                      </main>
+              </div>
+              <!-- <p align = "center">
+                  <img src="/images/Torso_motion.png" style="width:50%" >
+                </p> -->
+              <div class="row" >
+                      <main class='main'>
+                              <section class='right section' align = "justify" style="width:100%" style="float: right; margin-bottom: 10px;" >
+                                <p>
+                                  Without pre-specified gait initiliazation, the algorithm is able to establish a quasi-periodic gait. In the phase plots above, the top line corresponds to the first ten seconds of the gait initialization
+                                  and the bottom one to the remaining 5-minute walk simulation.
+                                    <!-- <img src="/images/th1_in.png" style="width:130px" >
+                                    <img src="/images/th2_in.png" style="width:130px" >
+                                    <img src="/images/th3_in.png" style="width:130px" >
+                                </p>
+                                <p>
+                                    <img src="/images/th1.png" style="width:130px; margin-bottom: 10px;" >
+                                    <img src="/images/th2.png" style="width:130px; margin-bottom: 10px;" >
+                                    <img src="/images/th3.png" style="width:130px; margin-bottom: 10px;" > -->
+                                   </p>
+                                   <p>
+                                          Further, the algorithm is robust against torso disturbances (introduced as discontinuities in its angular velocity).
+                                          After each push, the controller recovers its quasi-periodic gait.
+                                   </p>
+                              </section>
+
+                              <div class="horizontalgap" style="width:40px"></div>
+
+                              <section class='left section' style = "width: 100%">
+                                    <p >
+                                          <img src="/images/disturbance.png" style="width:310px" >
+                                     </p>
+                              </section>
+                      </main>
+              </div>
+              <!-- Without pre-specified gait initiliazation, the algorithm is able to establish a quasi-periodic gait. The top phase plots correspond to the first ten seconds of the gait initialization
+              and the bottom phase plots the remaining 5-minute walk behavior. -->
+
+              <!-- <a >
+                   <img src="/images/th1_in.png" style="width:140px; margin-bottom: 10px;" >
+                   <img src="/images/th2_in.png" style="width:140px; margin-bottom: 10px;" >
+                   <img src="/images/th3_in.png" style="width:140px; margin-bottom: 10px;" >
+              </a>
+               <a >
+                    <img src="/images/th1.png" style="width:140px; margin-bottom: 10px;" >
+                    <img src="/images/th2.png" style="width:140px; margin-bottom: 10px;" >
+                    <img src="/images/th3.png" style="width:140px; margin-bottom: 10px;" >
+               </a> -->
+              <!-- <a >
+                   <img src="/images/disturbance.png" style="width:300px; margin-bottom: 10px;" >
+              </a> -->
 
 <!-- ************************* PARALLEL MANEUVER  ************************* -->
 
