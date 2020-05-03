@@ -5,7 +5,7 @@
     <meta charset='utf-8'>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width,maximum-scale=2">
-    <link rel="stylesheet" type="text/css" media="screen" href="/assets/css/style.css?v=f6ea06e1d7c769527b1b84d4b1ff860d98e7c546">
+    <link rel="stylesheet" type="text/css" media="screen" href="/assets/css/style.css?v=9478b522319e7aad44a5155c0ddb0185c7b1f35f">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="/assets/css/academicons.min.css"/>
 
@@ -65,38 +65,18 @@
 <body>
 
   <div class="row" style="margin-bottom=0em; margin-left:0.2em">
-    <div class="videoWrapper" style="width:100%">
-      <iframe control muted width="775" height="436" style="border-radius:0.4em;" src="/videos/Franka.mp4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-      <!-- original dimensions 1194x672 -->
+      <div class="videoWrapper" style="width:100%">
+        <iframe control muted width="775" height="436" style="border-radius:0.4em;" src="/videos/Franka.mp4"
+                frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
     </div>
   </div>
-  <!-- <div class="row" style="margin-bottom=-1em; margin-left:0.2em">
-    <div class="column2" style="width:53%">
-      <div class="container">
-        <img style="width:100%;" src="/images/kle3.gif" alt="KL-E^3 for Bayesian Optimization">
-        <div class="caption" style="bottom:3%;"><p>Robot sampling a state space (for Bayesian optimization) while taking into account dynamic constraints (keeping the cart double pendulum inverted).</p></div>
-      </div>
-    </div>
 
-    <div class="column2" style="width:37.5%">
-      <div class="container">
-        <img style="width:100%;" src="/images/quadcopter_learning.gif" alt="Quadcopter Learning">
-        <div class="caption" style="bottom:3%;"><p>Our method (blue quadcopter) exploring the state-space of the stochastic model next to an information maximizing method (green)</p></div>
-      </div>
-    </div>
-  </div> -->
 
-  <br><p align = "justify">
-We work on machine learning techniques that use control authority (inputs to the system) to actively learn.
-The inputs do not simply contribute to learning through action, the inputs are chosen to maximize the amount of
-learning that occurs in a given amount of time. Much of our recent work has used ergodicity as a principle of
-information coverage.  Moreover, we have been using active learning with respect to information about unknown
-Koopman operators (nonparametric descriptions of dynamical systems).
-</p>
+  <br>
 
 <p align = "justify"><font size = "3">
-      This project focuses on developing machine learning techniques that improve
-      both short- and long-term prediction accuracy. We develop numerical methods
+      This project focuses on developing physics-contrained machine learning techniques
+      that improve both short- and long-term prediction accuracy. We develop numerical methods
       that guarantee the stability of data-driven modeling, prediction, and
       control and can run in real time. We test these methods in simulations and
       experiments on various robotic systems and applications, including predicting
@@ -104,20 +84,95 @@ Koopman operators (nonparametric descriptions of dynamical systems).
       or pushing blocks using the Franka Emika robot.
 </p>
 
-  <h3>Publications</h3>
-  <p><b>Data-Driven Identification of Stable Koopman Operators </b>
-    <br>G. Mamakoukas and T. D. Murphey
-    <br><i>Science Robotics</i>, <i> In Preparation </i>, 2020.
-  <p><b>Learning Stable Linear Systems for Prediction and Control</b>
-    <br>G. Mamakoukas and T. D. Murphey
-    <br><i>Transactions on Robotics</i>, <i> In Preparation </i>, 2020.
-  <p><b>Local Koopman operators for data-driven control of robotic systems</b>
-    <br>G. Mamakoukas, M. Castano, X. Tan, and T. D. Murphey
-    <br><i>Robotics: Science and Systems Proceedings</i>, 2019. <a href="../pdfs/2019RSSMaCaTaMu.pdf">PDF</a></p>
-  <p><b>Local Koopman operators for data-driven control of robotic systems</b>
-    <br>G. Mamakoukas, M. Castano, X. Tan, and T. D. Murphey
-    <br><i>Robotics: Science and Systems Proceedings</i>, 2019. <a href="../pdfs/2019RSSMaCaTaMu.pdf">PDF</a></p>
+<h2 align = "center"> Experiments </h2>
+    To illustrate the importance of stabiity on data-driven control, I use the Franka Emika robot to
+    apply control based on a least-squares, unstable data-driven model and my stability-enforcing data-driven algorithm.
+    <p align = "justify">
+          <img src="/images/Fig8_LS_600Measurements.svg" style="width:370px; margin-right: 10px;" >
+          <img src="/images/Fig8_SUB.svg" style="width:370px; margin-right: 10px;" >
 
+          <br>
+          <br>
+          As seen from the simulation, the unconstrained least-squares solution is not safe to test on the physical robot.
+          The performance of the constrained, stable data-driven model is shown next, in simulation and experiment.
+
+          <main class='main'>
+                <section class='left section' style = "width: 93%">
+                      <p>
+                        <video controls autoplay loop >
+                                <source src='/videos/Franka_fig8.mp4'  type="video/mp4" />
+                        </video>
+                      </p>
+                </section>
+
+
+                <div class="horizontalgap" style="width:50px"></div>
+
+                <section class='right section' align = "justify" style="width:91%" >
+                      <p>
+                        <video controls autoplay loop >
+                                <source src='/videos/Franka_fig8_8x.mp4'  type="video/mp4" />
+                        </video>                  </p>
+                </section>
+
+          </main>
+    </p>
+
+    The stable model is robust and quickly recovers from several randomly introduced disturbances. 
+    <p align = "center">
+        <img src="/images/Fig8_push_SUB.svg" style="width:380px; margin-right: 10px;" >
+    </p>
+    <h3 align = "center"> Pusher-Slider </h3>
+    I also test the algorithm on a pusher-slider system that has hybrid dynamics;
+    the Franka Emika manipulator holding a stick pushes a block to a target.
+    <br>
+    <video controls autoplay loop >
+            <source src='/videos/PusherSlider.mp4'  type="video/mp4" />
+    </video>
+    Before the experiments, I measure the accuracy of the stable data-driven model in simulation.
+    I compare the real trajectory of the measured training data to the prediction of the model,
+    given the applied controls. The stable data-driven model accurately captures the hybrid dynamics
+    between the manipulator and the block and successfully pushes it to the target when tested in
+    experiments.
+    <main class='main'>
+          <section class='left section' style = "width: 90%">
+                <p>
+                  <video controls autoplay loop >
+                          <source src='/videos/Push1.mp4'  type="video/mp4" />
+                  </video>
+                </p>
+          </section>
+
+
+          <div class="horizontalgap" style="width:50px"></div>
+
+          <section class='right section' align = "justify" style="width:90%" >
+                <p>
+                  <video controls autoplay loop >
+                          <source src='/videos/Push2.mp4'  type="video/mp4" />
+                  </video>                  </p>
+          </section>
+
+          <div class="horizontalgap" style="width:50px"></div>
+
+          <section class='right section' align = "justify" style="width:90%" >
+                <p>
+                  <video controls autoplay loop >
+                          <source src='/videos/Push3.mp4'  type="video/mp4" />
+                  </video>                  </p>
+          </section>
+
+    </main>
+
+
+
+  <h3>Publications</h3>
+          <p><b>Data-Driven Identification of Stable Koopman Operators </b>
+            <br>G. Mamakoukas and T. D. Murphey
+            <br><i>Science Robotics</i>, <i> In Preparation </i>, 2020.
+          <p><b>Learning Stable Linear Systems for Prediction and Control</b>
+            <br>G. Mamakoukas and T. D. Murphey
+            <br> <i> Double blind peer reviewed venue </i>, Submitted, 2020.
 
 
   <!-- <h3>Funding</h3>

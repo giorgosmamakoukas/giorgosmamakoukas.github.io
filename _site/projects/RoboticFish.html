@@ -5,7 +5,7 @@
     <meta charset='utf-8'>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width,maximum-scale=2">
-    <link rel="stylesheet" type="text/css" media="screen" href="/assets/css/style.css?v=f6ea06e1d7c769527b1b84d4b1ff860d98e7c546">
+    <link rel="stylesheet" type="text/css" media="screen" href="/assets/css/style.css?v=9478b522319e7aad44a5155c0ddb0185c7b1f35f">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="/assets/css/academicons.min.css"/>
 
@@ -59,12 +59,14 @@
 
     <div id="main_content_wrap" class="outer">
       <section id="main_content" class="inner">
-        <h1>Data-Driven Control of Robotic Fish</h1>
+        <h1 align = "center">Data-Driven Control of Robotic Fish</h1>
 
 <body>
   <div class="videoWrapper">
+    <!-- RSS 2019 -->
     <iframe control muted width="775" height="436" style="border-radius:0.4em;" src="https://www.youtube.com/embed/khqU0W1Nn2g?rel=0&autoplay=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-    <!-- original dimensions 1194x672 -->
+    <!-- TRO 2020 -->
+      <!-- <iframe control muted width="775" height="436" style="border-radius:0.4em;" src="https://www.youtube.com/embed/1r6yC4jcw-g?rel=0&autoplay=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> -->
   </div>
 
 
@@ -77,20 +79,89 @@
   uncertain, for instance due to unknown and unknowable fluid
   mechanics.  The work involves developing online algorithms for
   underwater vehicles in Xiaobo Tan's group at Michigan State
-  University, a collaborator on this project.  Moreover,
-  decentralized/distributed algorithms are being developed as part of
-  the work.</p>
+  University, a collaborator on this project.  </p>
 
-  <h3>Publications</h3>
+  <p>
+
+  <h2 align = "center" > Prediction Accuracy Bounds of Data-Driven Models </h2>
+  <p align = "justify">
+        I designed a methodology for data-driven embedding of nonlinear systems that bounds the model
+        error in terms of the prediction horizon and the magnitude of the derivatives of the system states.
+        Using  higher-order  derivatives of  general  nonlinear  dynamics  that  need  not  be  known, I derive
+        an error formula that can predict the worst-case accuracy of a data-driven model that uses derivative-based classifiers/features.
+        By doing so, the error formula can be used to choose the appropriate order of derivatives in the training features.
+        In fact, the error bound can be computed both with (model-based) and without (data-driven) knowledge of the system dynamics.
+      </p>
+
+ <!-- Using  higher-order  derivatives of  general  nonlinear  dynamics  that  need  not  be  known,  weconstruct  a  Koopman  operator-based  linear
+ representation  andutilize  Taylor  series  accuracy  to  derive  an  error  bound.  Theerror  formula  is  used  to  choose  the  order  of
+ derivatives  in  thebasis  functions  and  obtain  a  data-driven  Koopman  model  usinga  closed-form  expression  that  can  be  computed  in
+ real  time.The Koopman representation of the nonlinear system is used tosynthesize LQR feedback, the gains of which need to be calculatedonly once,
+ so long as the dynamics do not change, enabling fastcontrol  synthesis. -->
+
+<p align = "center">
+    <img src="/images/ErrorBounds_n2.svg" style="width:350px; margin-right: 10px;" >
+    <img src="/images/ErrorBounds_n3.svg" style="width:350px; margin-right: 10px;" >
+  </p>
+  <p align = "justify">
+      The above plots are used for illustrative pursposs and show the computed error bounds and actual error over the prediction horizon
+      for the pendulum system states. "Data bound" is the error bound computed in a model-free way,
+      without any knowledge of the system; "Model bound" is model-based and uses the analytical dynamics
+      equations to compute the maximum possible derivatives of the system (and is inevitably conversative);
+      "Actual error" is the deviation induced by the data-driven model over hundreds of different initializations.
+      The two right plots correspond to the model that uses classifiers with one additional order of derivatives as features.
+      Note that the error bound that is completely data-driven predicts the actual accuracy of the model very closely.
+
+
+
+  <h2 align = "center"> Experiments with Robotic Fish </h2>
+          <p align = "justify">
+              In collaboration with Xiaobo Tan's group at Michigan State University, I implemented the data-driven
+              algorithm on their tail-actuated robotic fish. We tested both an offline- and an online- (updated in real time)
+              trained model and outperformed alternative well-tuned controllers in the presence of strong fluid
+              disturbance generated by a propeller (shown in the video below).
+          </p>
+          <main class='main'>
+                <section class='left section' style = "width: 100%">
+                      <p>
+                            <img src="/images/Fish.jpg" style="width:380px; margin-right: 10px;" >
+                      </p>
+                </section>
+
+
+                <div class="horizontalgap" style="width:50px"></div>
+
+                <section class='right section' align = "justify" style="width:70%" >
+                      <p>
+                            <img src="/images/Bias45Amp25_v2.svg" style="width:380px; margin-right: 10px;" >
+                      </p>
+                </section>
+
+          </main>
+  </p>
+  <!-- <img src="/images/Fish.jpg" style="width:400px; margin-right: 10px;" > -->
+
+  <!-- <img src="/images/Bias45Amp25_v2.svg" style="width:400px; margin-right: 10px;" > -->
+  <!-- <img src="/images/ExperimentSetup.png" style="width:400px; margin-right: 10px;" > -->
+  <p align = "center">
+       <video controls autoplay loop >
+               <source src='/videos/TROvideo.mp4'  type="video/mp4" />
+       </video>
+  </p>
+  <br>
+
+
+
+  <h3>Selected Publications</h3>
   <p><b>Control-Oriented Modeling of Soft Robotic Swimmer with Koopman Operators</b>
     <br>M. Castano, A. Hess, G. Mamakoukas, T. Gao, T. D. Murphey, and X. Tan
-    <br><i>International Conference on Advanced Intelligent Mechatronics</i>, <i> Submitted </i>, 2020.
+    <br><i>International Conference on Advanced Intelligent Mechatronics</i>, Accepted, 2020.
   <p><b>Online Data-Driven Control of Robotic Systems Using Derivative-Based Koopman Operators</b>
     <br>G. Mamakoukas, M. Castano, X. Tan, and T. D. Murphey
-    <br><i>Transactions on Robotics</i>, <i> Submitted </i>, 2019.
+    <br><i>Transactions on Robotics (TRO) </i>, Submitted, 2019.
   <p><b>Local Koopman operators for data-driven control of robotic systems</b>
     <br>G. Mamakoukas, M. Castano, X. Tan, and T. D. Murphey
-    <br><i>Robotics: Science and Systems Proceedings</i>, 2019. <a href="../pdfs/2019RSSMaCaTaMu.pdf">PDF</a></p>
+    <br><i>Robotics: Science and Systems (RSS) Proceedings</i>, 2019. <a href="../pdfs/2019RSSMaCaTaMu.pdf">PDF</a></p>
 
   <h3>Funding</h3>
   <p> This project is funded by the <a href="https://www.nsf.gov/">National Science Foundation</a>–Information and Intelligent Systems: Information-driven Autonomous Exploration in Uncertain Underwater Environments.</p><br>
