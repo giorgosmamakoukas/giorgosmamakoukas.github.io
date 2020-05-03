@@ -5,7 +5,7 @@
     <meta charset='utf-8'>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width,maximum-scale=2">
-    <link rel="stylesheet" type="text/css" media="screen" href="/assets/css/style.css?v=9478b522319e7aad44a5155c0ddb0185c7b1f35f">
+    <link rel="stylesheet" type="text/css" media="screen" href="/assets/css/style.css?v=73cca47f0cba8f61db3982af649172cccd7d5456">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="/assets/css/academicons.min.css"/>
 
@@ -52,7 +52,9 @@
     <!-- MAIN CONTENT -->
     <div id="main_content_wrap" class="outer">
       <section id="main_content" class="inner">
-        <head>
+        <!-- <!DOCTYPE html> -->
+<!-- <html> -->
+<head>
 <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-148321121-1"></script>
 <script>
@@ -80,75 +82,6 @@
 
 <img src="/images/Giorgos1.jpg" style="width:40%; display:flex; justify-content:center;">
 <br>
-<!--
-<div class="mySlides fade">
-  <img src="/images/Giorgos1.jpg" style="width:40%; display:flex; justify-content:center;">
-  <div class="text">Members of the lab at the Robotics Science and Systems (RSS) Conference in Freiburg, Germany. June 2019.</div>
-</div>
-
-<div class="mySlides fade">
-  <img src="/images/Giorgos2.jpg" style="width:40%; display:flex; justify-content:center;">
-  <div class="text">Members of the lab celebrating a birthday! June 2019.</div>
-</div>
-
-<br>
-
-<div style="text-align:center">
-  <span class="dot" onclick="currentSlide(1)"></span>
-  <span class="dot" onclick="currentSlide(2)"></span>
-</div>
-
--->
-
-<!-- For slideshow to scroll through -->
-<!--
-<script>
-  var slideIndex = 1;
-  var myTimer;
-
-  window.addEventListener("load",function() {
-    showSlides(slideIndex);
-    myTimer = setInterval(function(){plusSlides(1)}, 4000);
-  })
-
-  function currentSlide(n){
-    clearInterval(myTimer);
-    myTimer = setInterval(function(){plusSlides(n+1)}, 4000);
-    showSlides(slideIndex = n);
-  }
-
-  function plusSlides(n) {
-    clearInterval(myTimer);
-    if (n < 0){
-      showSlides(slideIndex -= 1);
-    } else {
-      showSlides(slideIndex += 1);
-    }
-    if (n == -1){
-      myTimer = setInterval(function(){plusSlides(n+2)}, 4000);
-    } else {
-      myTimer = setInterval(function(){plusSlides(n+1)}, 4000);
-    }
-  }
-
-  function showSlides(n) {
-    var i;
-    var slides = document.getElementsByClassName("mySlides");
-    var dots = document.getElementsByClassName("dot");
-    if (n > slides.length) {slideIndex = 1}
-    if (n < 1) {slideIndex = slides.length}
-    for (i = 0; i < slides.length; i++) {
-        slides[i].style.display = "none";
-    }
-    for (i = 0; i < dots.length; i++) {
-        dots[i].className = dots[i].className.replace(" active", "");
-    }
-    slides[slideIndex-1].style.display = "block";
-    dots[slideIndex-1].className += " active";
-  }
-</script>
-
--->
 
 
 <!-- <div class="about-box"> -->
@@ -175,7 +108,7 @@
     <div class="column2" style="width:50%">
       <h2 align = "center"> Teaching </h2>
       <a href="/Leadership">
-        <img style="border-radius:0.4em; width:100%; height:12.5em;" src="/images/Teaching4.jpg"    ></a>
+        <img style="border-radius:0.4em; width:100%; height:12.5em;" src="/images/teaching.jpg"    ></a>
     </div>
 
 
@@ -192,46 +125,13 @@
     <img style="border-radius:0.4em; width:100%; height:15.8em; margin-right: 30px;" src="/images/MITpresentation.jpg"></a>
 </div>
 
-<!--
-  </div>
-  <div class="row" style="margin-bottom=-1em;">
-    <div class="column2" style="width:100%">
-      <a href="/projects/AlgorithmicMatterAndEmergentComputation">
-        <img style="border-radius:0.4em; width:60%" src="/images/sideways.png"
-        alt="Algorithmic Matter" title="Algorithmic Matter"></a>
-      </div>
-  </div> -->
 </div>
 
-<!-- <br>
-<div class="row">
-  <div class="column4">
-      <div class="news-box">
-        <h2><a href="/news" style="color:black">News</a></h2>
-          <p><b>November 7, 2019</b> <a href="/2019/11/07/new-lab-member.html" style="color:black">New Lab Member</a></p>
-          <p><b>November 7, 2019</b> <a href="/2019/11/07/taosha-best-paper.html" style="color:black">Taosha Wins Best Paper at IROS 2019</a></p>
 
-      </div>
-  </div>
-  <div class="column5">
-    <div class="recentpapers-box">
-      <h2><a href="/publications" style="color:black">Recent Papers</a></h2>
-      <p><b>Local Koopman Operators for Data-Driven Control of Robotic Systems</b>
-        <br>G. Mamakoukas, M. Castano, X. Tan, and T. D. Murphey
-        <br><i>Robotics: Science and Systems</i>, vol. 4, no. 34, 2019. <a style="color:#C4D3F2" href="pdfs/2019RSSMaCaTaMu.pdf">Paper</a></p>
-      <p><b>A robot made of robots: emergent transport and control of a smarticle ensemble</b>
-        <br>W. Savoie, T. A. Berrueta, Z. Jackson, A. Pervan, R. Warkentin, S. Li, T. D. Murphey, K. Wiesenfeld, and D. I. Goldman
-        <br><i>Science Robotics</i>, vol. 4, no. 34, 2019. <a style="color:#C4D3F2" href="https://robotics.sciencemag.org/content/4/34/eaax4316">Paper</a></p>
-      <p><b>Dynamical system segmentation for information measures in motion</b>
-        <br>T. Berrueta, A. Pervan, K. Fitzsimons, and T. D. Murphey
-        <br><i>IEEE Robotics and Automation Letters</i>, vol. 4, no. 1, pp. 169–176, 2019. <a style="color:#C4D3F2" href="pdfs/2019BePeFiMu.pdf">PDF</a></p>
-      </div>
-  </div> -->
-
-<!-- </div> -->
 </div>
 
 </body>
+<!-- </html> -->
 
       </section>
     </div>
